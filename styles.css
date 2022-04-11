@@ -1,0 +1,19 @@
+body {
+    background-color: #343434;
+}
+.container-sm.text-white.d-flex {
+    display: flex !important;
+    justify-content: space-evenly !important;
+}
+option#Option_1 {
+    display: none;
+}
+option#Option_2 {
+    display: none;
+}
+option#Option_3 {
+    display: none;
+}
+option#Option_4 {
+    display: none;
+}
