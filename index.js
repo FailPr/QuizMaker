@@ -37,7 +37,6 @@ function addAnswers_DropDown(Answer)
         if(document.getElementById('Option_3').innerHTML=="")
         {
             document.getElementById('Option_3').style.display="none";
-            console.log('true');
         }
     }
     else if(Answer=='Answer 4')
@@ -47,7 +46,6 @@ function addAnswers_DropDown(Answer)
         if(document.getElementById('Option_4').innerHTML=="")
         {
             document.getElementById('Option_4').style.display="none";
-            console.log('true');
         }
     }
 }
@@ -56,9 +54,16 @@ function NextButton()
 {
     if(MyQuestions.length<5)
     {
-        console.log(MyQuestions);
         BuildQuestion();
         document.getElementById('Question_builder_counter').innerHTML=`Question Counter ${MyQuestions.length}/5`;
+    }
+    if(MyQuestions.length>0)
+    {
+        document.getElementById('Finish_Btn').style.display="inline";
+    }
+    if(MyQuestions.length==5)
+    {
+        document.getElementById('Next_Btn').style.display="none";
     }
 }
 
@@ -77,7 +82,60 @@ function BuildQuestion()
     const Answer_3 =document.getElementById("Answer 3").value;
     const Answer_4 =document.getElementById("Answer 4").value;
     const CorrectAnswer = document.getElementById("dropdownselection").value;
-    MyQuestions.push(new QuestionConstructor(Question,Answer_1,Answer_2,Answer_3,Answer_4,CorrectAnswer));
+    const Errors =BuilQuestionErrors();
+    if(Errors.length==0)
+    {
+        MyQuestions.push(new QuestionConstructor(Question,Answer_1,Answer_2,Answer_3,Answer_4,CorrectAnswer));
+        clear();
+    }
+
+}
+
+function BuilQuestionErrors()
+{
+    const Errors=[];
+    if(document.getElementById("Question").value =="")
+    {
+        Errors.push("Question Input Can't be null");
+    }
+    if(document.getElementById("Answer 1").value =="")
+    {
+        Errors.push("Answer 1 Input Can't be null");
+    }
+    if(document.getElementById("Answer 2").value =="")
+    {
+        Errors.push("Answer 2 Input Can't be null");
+    }
+    if(document.getElementById("Answer 3").value =="")
+    {
+        Errors.push("Answer 3 Input Can't be null");
+    }
+    if(document.getElementById("Answer 4").value =="")
+    {
+        Errors.push("Answer 4 Input Can't be null");
+    }
+    if(document.getElementById("dropdownselection").value =="Click here and choose your correct answer")
+    {
+        Errors.push("Please Select Correct Answer");
+    }
+    if(document.getElementById("Answer 1").value!=document.getElementById('Option_1').innerHTML)
+    {
+        Errors.push("Something Wrong");
+    }
+    if(document.getElementById("Answer 2").value!=document.getElementById('Option_2').innerHTML)
+    {
+        Errors.push("Something Wrong");
+    }
+    if(document.getElementById("Answer 3").value!=document.getElementById('Option_3').innerHTML)
+    {
+        Errors.push("Something Wrong");
+    }
+    if(document.getElementById("Answer 4").value!=document.getElementById('Option_4').innerHTML)
+    {
+        Errors.push("Something Wrong");
+    }
+    console.log(Errors);
+    return Errors;
 }
 
 function AddToDataBase(Question)
@@ -85,4 +143,22 @@ function AddToDataBase(Question)
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", "add.php?q=" + Question);
     xmlhttp.send();
+}
+
+function clear()
+{
+    document.getElementById("Question").value="";
+    document.getElementById("Answer 1").value="";
+    document.getElementById("Answer 2").value="";
+    document.getElementById("Answer 3").value="";
+    document.getElementById("Answer 4").value="";
+    document.getElementById('Option_1').innerHTML="";
+    document.getElementById('Option_2').innerHTML="";
+    document.getElementById('Option_3').innerHTML="";
+    document.getElementById('Option_4').innerHTML="";
+    document.getElementById('Option_1').style.display="none";
+    document.getElementById('Option_2').style.display="none";
+    document.getElementById('Option_3').style.display="none";
+    document.getElementById('Option_4').style.display="none";
+    document.getElementById('dropdownselection').value="Click here and choose your correct answer";
 }

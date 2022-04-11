@@ -43,16 +43,16 @@
         <label for="Question">Choose your Correct Answer:</label>
         <select class="form-select" id="dropdownselection" aria-label="Default select example">
             <option selected>Click here and choose your correct answer</option>
-            <option calss="d-none" id='Option_1'>Option 1</option>
-            <option calss="d-none" id='Option_2'>Option 2</option>
-            <option calss="d-none" id='Option_3'>Option 3</option>
-            <option calss="d-none" id='Option_4'>Option 4</option>
+            <option calss="d-none" id='Option_1'></option>
+            <option calss="d-none" id='Option_2'></option>
+            <option calss="d-none" id='Option_3'></option>
+            <option calss="d-none" id='Option_4'></option>
         </select>
     </div>
 </div>
 <div class="container d-flex flex-row-reverse">
-<div class="p-2"><button type="button" class="btn btn-warning"onclick="FinishButton()" >Finish</button></div>
-  <div class="p-2"><button type="button" class="btn btn-success" onclick="NextButton()">Next</button></div>
+<div class="p-2"><button type="button" class="btn btn-warning"onclick="FinishButton()" id="Finish_Btn" >Finish</button></div>
+  <div class="p-2"><button type="button" class="btn btn-success" onclick="NextButton()" id="Next_Btn">Next</button></div>
 </div>
   </body>
 </html>
