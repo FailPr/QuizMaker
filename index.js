@@ -174,3 +174,8 @@ function clear()
     document.getElementById('Option_4').style.display="none";
     document.getElementById('dropdownselection').value="Click here and choose your correct answer";
 }
+
+function refresh_page()
+{
+    location.reload();
+}
