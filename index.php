@@ -54,5 +54,7 @@
 <div class="p-2"><button type="button" class="btn btn-warning"onclick="FinishButton()" id="Finish_Btn" >Finish</button></div>
   <div class="p-2"><button type="button" class="btn btn-success" onclick="NextButton()" id="Next_Btn">Next</button></div>
 </div>
+<div class="container" id='Error_Div'>
+</div>
   </body>
 </html>

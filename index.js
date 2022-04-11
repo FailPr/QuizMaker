@@ -134,7 +134,19 @@ function BuilQuestionErrors()
     {
         Errors.push("Something Wrong");
     }
-    console.log(Errors);
+    if(Errors.length>0)
+    {   document.getElementById('Error_Div').innerHTML="";
+        document.getElementById('Error_Div').innerHTML+=`<ul class="list-group" id="list_errors">
+        <li class="list-group-item">Errors:</li>`;
+        for (let index = 0; index < Errors.length; index++) {
+            document.getElementById('list_errors').innerHTML+=`<li class="list-group-item list-group-item-danger">${Errors[index]}</li>`;
+        }
+        document.getElementById('Error_Div').innerHTML+="</ul>";
+    }
+    else
+    {
+        document.getElementById('Error_Div').innerHTML="";
+    }
     return Errors;
 }
 
