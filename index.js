@@ -70,8 +70,26 @@ function NextButton()
 function FinishButton()
 {
     const SerializeArray = JSON.stringify(MyQuestions);
-    console.log(SerializeArray);
-    AddToDataBase(SerializeArray);
+    $.ajax({
+        url:"add.php",    //the page containing php script
+        type: "post",    //request type,
+        dataType: 'json',
+        data: {Helper: "Send",Info:SerializeArray},
+        success:function(result)
+        {
+            console.log(result.a);
+            if(result.a=="New record created successfully")
+            {
+                document.getElementById('Error_Div').innerHTML="";
+                document.getElementById('Error_Div').innerHTML+=`<ul class="list-group" id="list_errors">
+            <li class="list-group-item">Action Result:</li>`;
+            document.getElementById('list_errors').innerHTML+=`<li class="list-group-item list-group-item-success">${result.a}</li>
+            <li class="list-group-item list-group-item-primary">Page Reloaded in 3s</li>`;
+            document.getElementById('Error_Div').innerHTML+="</ul>";
+            }
+        }
+    });
+    setTimeout(() => {  refresh_page(); }, 3500);
 }
 
 function BuildQuestion()

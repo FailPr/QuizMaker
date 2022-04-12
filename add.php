@@ -1,20 +1,25 @@
 <?php
 include 'databasebuilder.php';
 include 'connection.php';
-$q = $_REQUEST["q"];
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
 
+$Helper = $_POST['Helper'];
+$Info = $_POST['Info'];
 
-$sql = "INSERT INTO questions (Question)
-VALUES ('$q')";
+if ($Helper == "Send") 
+{
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    $sql = "INSERT INTO questions (Question)
+    VALUES ('$Info')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo json_encode(array("a" => 'New record created successfully'));
+    }
+    else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
 }
-else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
 
-$conn->close();
 ?>
