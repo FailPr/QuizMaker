@@ -98,7 +98,7 @@ function FinishButton() {
   });
   setTimeout(() => {
     refresh_page();
-  }, 100000000000);
+  }, 3800);
 }
 
 function BuildQuestion() {
