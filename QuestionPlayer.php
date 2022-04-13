@@ -28,6 +28,9 @@ select_from_db_questions(); ?>
         <button type="button" class="btn btn-primary mt-4" onclick="Send()">Search</button>
     </div>
     </div>
+    <div class="container text-center mt-4">
+    <button type="button" class="btn btn-outline-primary" onclick="window.location.href='index.php'">Main Menu</button>
+    </div>
     <div lass="container text-center text-black mt-4" id="CorrectWrongCounter"></div>
     
   </body>

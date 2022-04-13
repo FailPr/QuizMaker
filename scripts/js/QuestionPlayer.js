@@ -158,5 +158,5 @@ function random_question()
 }
 function ReloadPage()
 {
-    location.reload();
+    window.location.href='index.php';
 }
