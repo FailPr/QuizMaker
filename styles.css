@@ -26,3 +26,15 @@ body#QuestionPlayerBody {
 .mt-6 {
     margin-top: 7rem !important;
   }
+  button#Answer_1 {
+    border: 2px solid black;
+}
+button#Answer_2 {
+    border: 2px solid black;
+}
+button#Answer_3 {
+    border: 2px solid black;
+}
+button#Answer_4 {
+    border: 2px solid black;
+}

@@ -74,7 +74,7 @@ function Question_builder_counter_animation() {
 }
 
 function FinishButton() {
-  const SerializeArray = JSON.encode(MyQuestions);
+  const SerializeArray = JSON.stringify(MyQuestions);
   $.ajax({
     url: "add.php",
     type: "post",
