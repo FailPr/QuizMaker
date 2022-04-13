@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include 'scripts/php/databasebuilder.php' ?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
