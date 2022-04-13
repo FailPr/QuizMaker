@@ -1,4 +1,5 @@
 var Question=[];
+var CorrectWrongCounter={Correct:0,Correct_Question:{Question:[],Answer:[]},Wrong:0,Wrong_Question:{Question:[],Answer:[]}};
 function Send()
 {
     const i =document.getElementById('dropdownselection').value;
@@ -25,15 +26,15 @@ function show()
     const rand = Math.floor(Math.random() * Question.length);
     document.getElementById("SearchQuestionId").innerHTML="";
     document.getElementById("SearchQuestionId").innerHTML=`
-    <div class="container text-center text-black">
+    <div class="container text-center text-black animate__animated animate__zoomIn animate__slow">
         <div class="container text-center text-black mt-4">
             <h1 id="Question">${Question[rand].Question}</h1>
         </div>
-        <div class="container text-center text-black mt-4" id="Buttons_1">
+        <div class="container text-center text-black mt-4 animate__animated animate__zoomIn animate__slow" id="Buttons_1">
         <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block" style="width: 300px;" id="Answer_1" value="${Question[rand].Answer_1}" onclick="AnswerCheck(this.value)">${Question[rand].Answer_1}</button>
         <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;"id="Answer_2" value="${Question[rand].Answer_2}" onclick="AnswerCheck(this.value)">${Question[rand].Answer_2}</button>
         </div>
-        <div class="container text-center text-black mt-4" id="Buttons_2">
+        <div class="container text-center text-black mt-4 animate__animated animate__zoomIn animate__slow" id="Buttons_2">
         <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;" id="Answer_3" value="${Question[rand].Answer_3}" onclick="AnswerCheck(this.value)">${Question[rand].Answer_3}</button>
         <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;" id="Answer_4" value="${Question[rand].Answer_4}" onclick="AnswerCheck(this.value)">${Question[rand].Answer_4}</button>
         </div>
@@ -46,19 +47,25 @@ function AnswerCheck(Answer)
     if(Question[index].CorrectAnswer==Answer)
     {
         console.log("Correct");
-        Button_Colors(Answer,index);
+        CorrectWrongCounter.Correct+=1;
+        CorrectWrongCounter.Correct_Question.Question.push(Question[index].Question);
+        CorrectWrongCounter.Correct_Question.Answer.push(Answer);
+        Button_Colors(index);
         setTimeout(() => {  RemoveQuestionFromArray(index); random_question(); }, 1000);
 
     }
     else
     {
         console.log("Incorrect");
-        Button_Colors(Answer,index);
+        CorrectWrongCounter.Wrong_Question.Question.push(Question[index].Question);
+        CorrectWrongCounter.Wrong_Question.Answer.push(Answer);
+        CorrectWrongCounter.Wrong+=1;
+        Button_Colors(index);
         setTimeout(() => {  RemoveQuestionFromArray(index); random_question(); }, 1000);
     }
 }
 
-function Button_Colors(Answer,i)
+function Button_Colors(i)
 {
     const Buttons=[];
     Buttons.push("Answer_1");
@@ -69,16 +76,18 @@ function Button_Colors(Answer,i)
     {
         if(document.getElementById(Buttons[index]).value == Question[i].CorrectAnswer)
         {
-            document.getElementById(Buttons[index]).className="btn btn-success mt-4 btn-lg btn-block";
+            document.getElementById(Buttons[index]).className="btn btn-success mt-4 btn-lg btn-block disabled";
         }
         else
         {
-            document.getElementById(Buttons[index]).className="btn btn-danger mt-4 btn-lg btn-block"
+            document.getElementById(Buttons[index]).className="btn btn-danger mt-4 btn-lg btn-block disabled";
         }
+        document.getElementById(Buttons[index]).style.cursor="not-allowed";
     }
     setTimeout(() => {    for (let index = 0; index < Buttons.length; index++) 
         {
-            document.getElementById(Buttons[index]).className="btn btn-outline-primary mt-4 btn-lg btn-block";
+            document.getElementById(Buttons[index]).className="btn btn-outline-primary mt-4 btn-lg btn-block ";
+            document.getElementById(Buttons[index]).style.cursor="";
         }}, 500);
 
 }
@@ -117,7 +126,37 @@ function random_question()
     else
     {
         document.getElementById("Question").innerHTML="Quiz End";
+        document.getElementById("Question").className="animate__animated animate__zoomIn animate__slow";
         document.getElementById("Buttons_1").innerHTML="";
         document.getElementById("Buttons_2").innerHTML="";
+        document.getElementById("CorrectWrongCounter").innerHTML=`
+        <div class="container text-center text-black mt-4 animate__animated animate__zoomIn animate__slow" id="CorrectWrongDiv">
+        <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Correct Answers: ${CorrectWrongCounter.Correct}
+          <div class="image-parent">
+              <img src="accept.png" class="img-fluid" alt="quixote">
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+        Wrong Answers: ${CorrectWrongCounter.Wrong}
+        <div class="image-parent">
+            <img src="cancel.png" class="img-fluid" alt="quixote">
+        </div>
+      </li>
+      <li onclick="ReloadPage()" class="list-group-item d-flex justify-content-between align-items-center">
+      HomePage
+      <div class="image-parent">
+          <img src="list.png" class="img-fluid" alt="quixote">
+      </div>
+    </li>
+        </ul>
+        </div>`;
+        console.log(CorrectWrongCounter);
     }
+
+}
+function ReloadPage()
+{
+    location.reload();
 }

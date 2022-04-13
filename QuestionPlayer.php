@@ -15,19 +15,20 @@
   <div class="container text-center text-black mt-6">
         <img src="quiz_player.png" class="img-rounded" alt="Cinque Terre">
         <h1>Quiz Player</h1>
-        <p>Answer correct all questions and be genius</p>
+        <p>Strong minds discuss <strong>ideas</strong>, average minds discuss <strong>events</strong>, weak minds discuss <strong>people</strong> -Socrates</p>
     </div>
     <div class="container text-center text-black mt-4 d-flex justify-content-center" id="SearchQuestionId">
     <div class="form-group w-50">
-        <label for="Question">Choose your Correct Answer:</label>
+        <label for="Question">Choose Question Pack</label>
         <select class="form-select" id="dropdownselection" aria-label="Default select example">
-            <option selected>Click here and choose your correct answer</option>
+            <option selected>Click here and choose Question Pack</option>
             <?php include 'search.php';
 select_from_db_questions(); ?>
         </select>
         <button type="button" class="btn btn-primary mt-4" onclick="Send()">Search</button>
     </div>
     </div>
+    <div lass="container text-center text-black mt-4" id="CorrectWrongCounter"></div>
     
   </body>
 </html>
