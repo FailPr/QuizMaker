@@ -4,7 +4,7 @@ function Send()
 {
     const i =document.getElementById('dropdownselection').value;
     $.ajax({
-        url: "search.php",
+        url: "scripts/php/search.php",
         type: "post",
         dataType: "json",
         data: { Helper: "Send", Info: i },
@@ -135,19 +135,19 @@ function random_question()
         <li class="list-group-item d-flex justify-content-between align-items-center">
           Correct Answers: ${CorrectWrongCounter.Correct}
           <div class="image-parent">
-              <img src="accept.png" class="img-fluid" alt="quixote">
+              <img src="src/accept.png" class="img-fluid" alt="quixote">
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
         Wrong Answers: ${CorrectWrongCounter.Wrong}
         <div class="image-parent">
-            <img src="cancel.png" class="img-fluid" alt="quixote">
+            <img src="src/cancel.png" class="img-fluid" alt="quixote">
         </div>
       </li>
       <li onclick="ReloadPage()" class="list-group-item d-flex justify-content-between align-items-center">
       HomePage
       <div class="image-parent">
-          <img src="list.png" class="img-fluid" alt="quixote">
+          <img src="src/list.png" class="img-fluid" alt="quixote">
       </div>
     </li>
         </ul>

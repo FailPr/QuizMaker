@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<?php include 'databasebuilder.php'; ?>
+<?php include 'scripts/php/databasebuilder.php'; ?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="quiz.png"/>
+    <link rel="icon" type="image/png" href="src/quiz.png"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="styles.css">
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="scripts/js/index.js"></script>
 </head>
     <title>QuizMaker</title>
   </head>
   <body class="animate__animated animate__zoomIn animate__slow">
     <div class="container text-center text-white mt-4 ">
-        <img src="quiz.png" class="img-rounded" alt="Cinque Terre">
+        <img src="src/quiz.png" class="img-rounded" alt="Cinque Terre">
         <h1>Quiz Maker</h1>
         <p>Make your own quiz</p>
         <p id='Question_builder_counter'>Question Counter 0/5</p>
