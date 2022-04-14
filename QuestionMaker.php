@@ -60,7 +60,7 @@
 </div>
 <div class="container text-center mt-4 mb-4">
     <button type="button" class="btn btn-outline-primary" onclick="window.location.href='index.php'">Main Menu</button>
-    </div>
+</div>
 <div class="container" id='Error_Div'>
 </div>
   </body>

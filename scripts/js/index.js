@@ -214,6 +214,7 @@ function clear() {
     "Click here and choose your correct answer";
 }
 
-function refresh_page() {
+function refresh_page() 
+{
   location.reload();
 }
