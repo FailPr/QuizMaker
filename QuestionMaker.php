@@ -25,23 +25,23 @@
     <div class="container-sm text-black">
     <div class="form-group">
         <label for="Question">Question:</label>
-        <input type="email" class="form-control" id="Question" placeholder="Question...">
+        <input type="email" class="form-control" id="Question">
     </div>
     <div class="form-group">
         <label for="Question">Answer 1:</label>
-        <input type="email" class="form-control" id="Answer 1" onkeyup='addAnswers_DropDown(this.id)' placeholder="Answer 1...">
+        <input type="email" class="form-control" id="Answer 1" onkeyup='addAnswers_DropDown(this.id)'>
     </div>
     <div class="form-group">
         <label for="Question">Answer 2:</label>
-        <input type="email" class="form-control" id="Answer 2" onkeyup='addAnswers_DropDown(this.id)' placeholder="Answer 2...">
+        <input type="email" class="form-control" id="Answer 2" onkeyup='addAnswers_DropDown(this.id)'>
     </div>
     <div class="form-group">
         <label for="Question">Answer 3:</label>
-        <input type="email" class="form-control" id="Answer 3" onkeyup='addAnswers_DropDown(this.id)' placeholder="Answer 3...">
+        <input type="email" class="form-control" id="Answer 3" onkeyup='addAnswers_DropDown(this.id)'>
     </div>
     <div class="form-group">
         <label for="Question">Answer 4:</label>
-        <input type="email" class="form-control" id="Answer 4" onkeyup='addAnswers_DropDown(this.id)' placeholder="Answer 4...">
+        <input type="email" class="form-control" id="Answer 4" onkeyup='addAnswers_DropDown(this.id)'>
     </div>
     <div class="form-group">
         <label for="Question">Choose your Correct Answer:</label>
