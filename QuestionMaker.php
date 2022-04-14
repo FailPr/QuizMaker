@@ -16,13 +16,13 @@
     <title>QuizMaker</title>
   </head>
   <body class="animate__animated animate__zoomIn animate__slow">
-    <div class="container text-center text-white mt-4 ">
+    <div class="container text-center text-black mt-4 ">
         <img src="src/quiz.png" class="img-rounded" alt="Cinque Terre">
         <h1>Quiz Maker</h1>
         <p>Make your own quiz</p>
         <p id='Question_builder_counter'>Question Counter 0/5</p>
     </div>
-    <div class="container-sm text-white">
+    <div class="container-sm text-black">
     <div class="form-group">
         <label for="Question">Question:</label>
         <input type="email" class="form-control" id="Question" placeholder="Question...">
