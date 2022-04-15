@@ -51,3 +51,6 @@ div#CorrectWrongDiv {
 img.img-fluid {
     width: 30px;
 }
+p#answerButtonP {
+    font-size: max(10px,14px);
+}

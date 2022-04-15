@@ -31,12 +31,12 @@ function show()
             <h1 id="Question">${Question[rand].Question}</h1>
         </div>
         <div class="container text-center text-black mt-4 animate__animated animate__zoomIn animate__slow" id="Buttons_1">
-        <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block" style="width: 300px;" id="Answer_1" value="${Question[rand].Answer_1}" onclick="AnswerCheck(this.value)">${Question[rand].Answer_1}</button>
-        <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;"id="Answer_2" value="${Question[rand].Answer_2}" onclick="AnswerCheck(this.value)">${Question[rand].Answer_2}</button>
+        <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block" style="width: 300px;" id="Answer_1" value="${Question[rand].Answer_1}" onclick="AnswerCheck(this.value)"><p id="answerButtonP">${Question[rand].Answer_1}</p></button>
+        <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;"id="Answer_2" value="${Question[rand].Answer_2}" onclick="AnswerCheck(this.value)"><p id="answerButtonP">${Question[rand].Answer_2}</p></button>
         </div>
         <div class="container text-center text-black mt-4 animate__animated animate__zoomIn animate__slow" id="Buttons_2">
-        <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;" id="Answer_3" value="${Question[rand].Answer_3}" onclick="AnswerCheck(this.value)">${Question[rand].Answer_3}</button>
-        <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;" id="Answer_4" value="${Question[rand].Answer_4}" onclick="AnswerCheck(this.value)">${Question[rand].Answer_4}</button>
+        <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;" id="Answer_3" value="${Question[rand].Answer_3}" onclick="AnswerCheck(this.value)"><p id="answerButtonP">${Question[rand].Answer_3}</p></button>
+        <button type="button" class="btn btn-outline-primary mt-4 btn-lg btn-block "style="width: 300px;" id="Answer_4" value="${Question[rand].Answer_4}" onclick="AnswerCheck(this.value)"><p id="answerButtonP">${Question[rand].Answer_4}</p></button>
         </div>
     </div>`;
 }
